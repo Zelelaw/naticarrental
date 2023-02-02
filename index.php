@@ -79,7 +79,7 @@ error_reporting(0);
                 <img src="assets/images/banner-image-3.jpg" style="width:100%; height:700px">
             </div>
             <div class="item">
-                <img src="assets/images/banner-image-4.png" style="width:100%; height:700px">
+                <img src="assets/images/banner-image-4.jpg" style="width:100%; height:700px">
             </div>
             <div class="item">
                 <img src="assets/images/banner-image-5.jpg" style="width:100%; height:700px">
