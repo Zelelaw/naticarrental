@@ -77,7 +77,6 @@ error_reporting(0);
               //Query for Listing count
               $brand = $_POST['brand'];
               $fueltype = $_POST['fueltype'];
-              // $sql = "SELECT id FROM `tblvehicles` WHERE `VehiclesBrand` = (SELECT id FROM tblbrands WHERE BrandName = 'SUZUKI') OR `FuelType` ='Petrol';";
               $sql = "SELECT id from tblvehicles where tblvehicles.VehiclesBrand=:brand and tblvehicles.FuelType=:fueltype";
               $query = $dbh->prepare($sql);
               $query->bindParam(':brand', $brand, PDO::PARAM_STR);
@@ -91,7 +90,6 @@ error_reporting(0);
           </div>
 
           <?php
-
           $sql = "SELECT tblvehicles.*,tblbrands.BrandName,tblbrands.id as bid  from tblvehicles join tblbrands on tblbrands.id=tblvehicles.VehiclesBrand where tblvehicles.VehiclesBrand=:brand and tblvehicles.FuelType=:fueltype";
           $query = $dbh->prepare($sql);
           $query->bindParam(':brand', $brand, PDO::PARAM_STR);
@@ -125,9 +123,9 @@ error_reporting(0);
               <h5><i class="fa fa-filter" aria-hidden="true"></i> Find Your Car </h5>
             </div>
             <div class="sidebar_filter">
-              <form action="#" method="get">
+              <form action="search-carresult.php" method="post">
                 <div class="form-group select">
-                  <select class="form-control">
+                  <select class="form-control" name="brand">
                     <option>Select Brand</option>
                     <?php $sql = "SELECT * from  tblbrands ";
                     $query = $dbh->prepare($sql);
@@ -142,7 +140,7 @@ error_reporting(0);
                   </select>
                 </div>
                 <div class="form-group select">
-                  <select class="form-control">
+                  <select class="form-control" name="fueltype">
                     <option>Select Fuel Type</option>
                     <option value="Petrol">Petrol</option>
                     <option value="Diesel">Diesel</option>

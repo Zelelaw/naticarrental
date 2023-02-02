@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-3 col-md-2">
-                    <div class="logo"><a href="index.php"><img src="assets/images/logo1.jpg" alt="image"/></a></div>
+                    <div class="logo"><a href="index.php"><img src="assets/images/logo1.jpg" alt="image" /></a></div>
                 </div>
                 <div class="col-sm-9 col-md-10">
                     <div class="header_info">
@@ -21,21 +21,20 @@
 
                         <div class="header_widgets">
                             <div class="circle_icon"><i class="fa fa-envelope" aria-hidden="true"></i></div>
-                            <p class="uppercase_text">For Support Mail us : </p>
+                            <p class="uppercase_text">Mail us : </p>
                             <a href="mailto:<?php echo htmlentities($email); ?>"><?php echo htmlentities($email); ?></a>
                         </div>
                         <div class="header_widgets">
                             <div class="circle_icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
-                            <p class="uppercase_text">Service Helpline Call Us: </p>
+                            <p class="uppercase_text">Call Us: </p>
                             <a href="tel:<?php echo htmlentities($contactno); ?>"><?php echo htmlentities($contactno); ?></a>
                         </div>
                         <div class="social-follow">
 
                         </div>
                         <?php if ($_SESSION['login'] == '') {
-                            ?>
-                            <div class="login_btn"><a href="#loginform" class="btn btn-xs uppercase" data-toggle="modal"
-                                                      data-dismiss="modal">Login</a></div>
+                        ?>
+                            <div class="login_btn"><a href="#loginform" class="btn btn-xs uppercase" data-toggle="modal" data-dismiss="modal">Login</a></div>
                         <?php } else {
                             echo "";
                         } ?>
@@ -49,17 +48,14 @@
     <nav id="navigation_bar" class="navbar navbar-default">
         <div class="container">
             <div class="navbar-header">
-                <button id="menu_slide" data-target="#navigation" aria-expanded="false" data-toggle="collapse"
-                        class="navbar-toggle collapsed" type="button"><span class="sr-only">Toggle navigation</span>
+                <button id="menu_slide" data-target="#navigation" aria-expanded="false" data-toggle="collapse" class="navbar-toggle collapsed" type="button"><span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
                 </button>
             </div>
             <div class="header_wrap">
                 <div class="user_login">
                     <ul>
-                        <li class="dropdown"><a href="#" data-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false"><i class="fa fa-user-circle"
-                                                                         aria-hidden="true"></i>
+                        <li class="dropdown"><a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user-circle" aria-hidden="true"></i>
                                 <?php
                                 $email = $_SESSION['login'];
                                 $sql = "SELECT FullName FROM tblusers WHERE EmailId=:email ";
@@ -90,8 +86,7 @@
                 <div class="header_search">
                     <div id="search_toggle"><i class="fa fa-search" aria-hidden="true"></i></div>
                     <form action="search.php" method="post" id="header-search-form">
-                        <input type="text" placeholder="Search..." name="searchdata" class="form-control"
-                               required="true">
+                        <input type="text" placeholder="Search..." name="searchdata" class="form-control" required="true">
                         <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                     </form>
                 </div>
@@ -102,7 +97,7 @@
 
                     <li><a href="page.php?type=aboutus">About Us</a></li>
                     <li><a href="car-listing.php">Car Listing</a>
-                    <!-- <li><a href="page.php?type=faqs">FAQs</a></li> -->
+                        <!-- <li><a href="page.php?type=faqs">FAQs</a></li> -->
                     <li><a href="contact-us.php">Contact Us</a></li>
 
                 </ul>
@@ -110,5 +105,4 @@
         </div>
     </nav>
     <!-- Navigation end -->
-
 </header>

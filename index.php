@@ -34,7 +34,11 @@ error_reporting(0);
     <link rel="shortcut icon" href="assets/images/favicon-icon/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
 
-    <link href="assets/css/carousel.css" rel="stylesheet" />
+    <!-- <link href="assets/css/carousel.css" rel="stylesheet" /> -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 </head>
 
@@ -49,80 +53,51 @@ error_reporting(0);
     <!-- /Header -->
 
 
-    <!-- Slideshow container -->
-    <div class="slideshow-container">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+            <li data-target="#myCarousel" data-slide-to="4"></li>
+            <li data-target="#myCarousel" data-slide-to="5"></li>
+        </ol>
 
-        <!-- Full-width images with number and caption text -->
-        <div class="mySlides fade">
-            <!-- <div class="numbertext">1 / 3</div> -->
-            <img src="assets/images/banner-image.jpg" style="width:100%; height:700px">
-            <div class="text"> </div>
-        </div>
-
-        <div class="mySlides fade">
-            <!-- <div class="numbertext">2 / 3</div> -->
-            <img src="assets/images/banner-image-1.jpg" style="width:100%; height:700px">
-            <div class="text"> </div>
-        </div>
-
-        <div class="mySlides fade">
-            <!-- <div class="numbertext">3 / 3</div> -->
-            <img src="assets/images/banner-image-2.jpg" style="width:100%; height:700px">
-            <div class="text"> </div>
-        </div>
-        <div class="mySlides fade">
-            <!-- <div class="numbertext">3 / 3</div> -->
-            <img src="assets/images/banner-image-3.jpg" style="width:100%; height:700px">
-            <div class="text"> </div>
-        </div>
-        <div class="mySlides fade">
-            <!-- <div class="numbertext">3 / 3</div> -->
-            <img src="assets/images/banner-image-4.png" style="width:100%; height:700px">
-            <div class="text"> </div>
-        </div>
-        <div class="mySlides fade">
-            <!-- <div class="numbertext">3 / 3</div> -->
-            <img src="assets/images/banner-image-5.jpg" style="width:100%; height:700px">
-            <div class="text"></div>
-        </div>
-        <!-- Next and previous buttons -->
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-    </div>
-    <br>
-
-    <!-- The dots/circles -->
-    <div style="text-align:center">
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
-        <span class="dot" onclick="currentSlide(4)"></span>
-        <span class="dot" onclick="currentSlide(5)"></span>
-        <span class="dot" onclick="currentSlide(6)"></span>
-    </div>
-
-    <!-- <section id="banner" class="banner-section">
-        <div class="container">
-            <div class="div_zindex">
-                <div class="row">
-                    <div class="col-md-5 col-md-push-7">
-                        <div class="banner_content">
-                            <h1>&nbsp;</h1>
-                            <p>&nbsp; </p>
-                            <p>&nbsp; </p>
-                            <p>&nbsp; </p>
-                            <p>&nbsp; </p>
-                            <p>&nbsp; </p>
-                            <p>&nbsp; </p>
-                            <p>&nbsp; </p>
-                        </div>
-                    </div>
-                </div>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="assets/images/banner-image.jpg" style="width:100%; height:700px">
             </div>
+            <div class="item">
+                <img src="assets/images/banner-image-1.jpg" style="width:100%; height:700px">
+            </div>
+            <div class="item">
+                <img src="assets/images/banner-image-2.jpg" style="width:100%; height:700px">
+            </div>
+            <div class="item">
+                <img src="assets/images/banner-image-3.jpg" style="width:100%; height:700px">
+            </div>
+            <div class="item">
+                <img src="assets/images/banner-image-4.png" style="width:100%; height:700px">
+            </div>
+            <div class="item">
+                <img src="assets/images/banner-image-5.jpg" style="width:100%; height:700px">
+            </div>
+
         </div>
-    </section> -->
-    <!-- /Banners -->
-    <!-- Resent Cat-->
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
     <section class="section-padding gray-bg">
         <div class="container">
             <div class="section-header text-center">
@@ -142,7 +117,7 @@ error_reporting(0);
                 <div class="tab-content">
                     <div role="tabpanel" class="tab-pane active" id="resentnewcar">
 
-                        <?php $sql = "SELECT tblvehicles.VehiclesTitle,tblbrands.BrandName,tblvehicles.PricePerDay,tblvehicles.FuelType,tblvehicles.ModelYear,tblvehicles.id,tblvehicles.SeatingCapacity,tblvehicles.VehiclesOverview,tblvehicles.Vimage1 from tblvehicles join tblbrands on tblbrands.id=tblvehicles.VehiclesBrand limit 9";
+                        <?php $sql = "SELECT tblvehicles.VehiclesTitle,tblbrands.BrandName,tblvehicles.PricePerDay,tblvehicles.FuelType,tblvehicles.ModelYear,tblvehicles.id,tblvehicles.SeatingCapacity,tblvehicles.VehiclesOverview,tblvehicles.Vimage1 from tblvehicles join tblbrands on tblbrands.id=tblvehicles.VehiclesBrand  order by tblvehicles.UpdationDate DESC limit 9";
                         $query = $dbh->prepare($sql);
                         $query->execute();
                         $results = $query->fetchAll(PDO::FETCH_OBJ);
