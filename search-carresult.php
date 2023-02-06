@@ -77,7 +77,7 @@ error_reporting(0);
               //Query for Listing count
               $brand = $_POST['brand'];
               $fueltype = $_POST['fueltype'];
-              $sql = "SELECT id from tblvehicles where tblvehicles.VehiclesBrand=:brand and tblvehicles.FuelType=:fueltype";
+              $sql = "SELECT id from tblvehicles where tblvehicles.VehiclesBrand=:brand or tblvehicles.FuelType=:fueltype";
               $query = $dbh->prepare($sql);
               $query->bindParam(':brand', $brand, PDO::PARAM_STR);
               $query->bindParam(':fueltype', $fueltype, PDO::PARAM_STR);
@@ -90,7 +90,7 @@ error_reporting(0);
           </div>
 
           <?php
-          $sql = "SELECT tblvehicles.*,tblbrands.BrandName,tblbrands.id as bid  from tblvehicles join tblbrands on tblbrands.id=tblvehicles.VehiclesBrand where tblvehicles.VehiclesBrand=:brand and tblvehicles.FuelType=:fueltype";
+          $sql = "SELECT tblvehicles.*,tblbrands.BrandName,tblbrands.id as bid  from tblvehicles join tblbrands on tblbrands.id=tblvehicles.VehiclesBrand where tblvehicles.VehiclesBrand=:brand or tblvehicles.FuelType=:fueltype";
           $query = $dbh->prepare($sql);
           $query->bindParam(':brand', $brand, PDO::PARAM_STR);
           $query->bindParam(':fueltype', $fueltype, PDO::PARAM_STR);
